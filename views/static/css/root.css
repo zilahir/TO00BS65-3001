@@ -1,6 +1,7 @@
 /*
   CSS RESET
 */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -772,12 +773,39 @@ html {
 .pure-table-horizontal tbody > tr:last-child > td {
   border-bottom-width: 0; }
 
+/*
+
+font-family: 'Roboto', sans-serif;
+font-family: 'Space Mono', monospace;
+
+*/
 .grid-container {
   justify-content: center;
   margin: 1vw auto; }
+  .grid-container .inner-container {
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    padding: 30px; }
 
-.nav-item {
-  height: unset; }
+.guestbook-menu-list {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 0; }
+  .guestbook-menu-list .nav-item {
+    height: unset; }
 
 .header {
   background-color: red; }
+
+#home.container p.author {
+  font-size: 33px; }
+
+#home .content {
+  margin: 10px 0; }
+  #home .content p code {
+    color: #ff6961; }
+
+p {
+  font-family: 'Space Mono', monospace; }
+
+h1 {
+  font-family: 'Roboto', sans-serif; }

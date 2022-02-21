@@ -1,5 +1,15 @@
 @import "./utils/reset.scss";
 @import "./utils/pure.scss";
+@import "./utils/fonts";
 @import "./partials/layout.scss";
 @import "./partials/navbar.scss";
 @import "./partials/header.scss";
+@import "./partials/home.scss";
+
+p {
+    font-family: 'Space Mono', monospace;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+}

@@ -1,0 +1,6 @@
+.guestbook-menu-list {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 0; }
+  .guestbook-menu-list .nav-item {
+    height: unset; }
