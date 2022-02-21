@@ -5,6 +5,11 @@
         p {
             &.author {
                 font-size: 33px;
+                margin-bottom: 5px;
+            }
+
+            &.student-id {
+                margin-bottom: 30px;
             }
         }
     }
@@ -12,6 +17,8 @@
     .content {
         margin: 10px 0;
         p {
+            font-size: 20px;
+            line-height: 2;
             code {
                 color: $code-red;
             }

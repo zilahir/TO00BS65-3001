@@ -797,12 +797,19 @@ font-family: 'Space Mono', monospace;
   background-color: red; }
 
 #home.container p.author {
-  font-size: 33px; }
+  font-size: 33px;
+  margin-bottom: 5px; }
+
+#home.container p.student-id {
+  margin-bottom: 30px; }
 
 #home .content {
   margin: 10px 0; }
-  #home .content p code {
-    color: #ff6961; }
+  #home .content p {
+    font-size: 20px;
+    line-height: 2; }
+    #home .content p code {
+      color: #ff6961; }
 
 p {
   font-family: 'Space Mono', monospace; }
