@@ -6,7 +6,6 @@
 
 import * as cors from 'cors';
 import { Application } from 'express';
-import * as flash from 'express-flash';
 import * as compress from 'compression';
 import * as connect from 'connect-mongo';
 import * as bodyParser from 'body-parser';

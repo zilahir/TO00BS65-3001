@@ -1,15 +1,19 @@
+import { Response, Request, NextFunction } from 'express'
+import { RootRequest } from '../routes/Api';
+
 /**
  * Handler for Home
  *
  * @author Richard Zilahi <zilahi@gmail.com>
  */
 
-import { Response, Request, NextFunction } from 'express'
-
 class Home {
-	public static index (request: Request, response: Response, next: NextFunction): void {
+	public static index (request: (Request & RootRequest), response: Response, next: NextFunction): void {
 		return response.render('pages/home', {
-			title: 'Home'
+			welcomeText: 'Guestbook TO00BS65-3001',
+			author: "Richard Zilahi",
+			studentId: 2108162,
+			routes: request.allPath ?? [],
 		});
 	}
 }

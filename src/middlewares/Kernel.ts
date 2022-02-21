@@ -11,6 +11,7 @@ import Http from './Http';
 import Views from './Views';
 import Statics from './Statics';
 import StatusMonitor from './StatusMonitor';
+import Pages from './Pages';
 
 import Locals from '../providers/Locals';
 
@@ -27,6 +28,10 @@ class Kernel {
 
 		// Mount view engine middleware
 		_express = Views.mount(_express);
+
+		// Mount pages middleware
+
+		_express = Pages.mount(_express);
 
 		// Mount statics middleware
 		_express = Statics.mount(_express);
