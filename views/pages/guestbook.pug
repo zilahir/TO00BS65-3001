@@ -1,7 +1,14 @@
 extends ../layout.pug
 block variables
   - var pages = routes
+  - var guestBookEntries = entries
 
 block content
     #guestbook.container
-    p kaka
+    table
+      thead
+        tr
+          th entry
+      tbody
+        each entry in guestBookEntries
+          td= entry.text
