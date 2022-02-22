@@ -1,5 +1,13 @@
+import { Request, Response, NextFunction } from "express"
 import { join } from 'path'
 import { readFileSync } from 'fs'
+import { RootRequest } from "../../routes/types"
+
+/**
+ * GuestBook controller
+ * 
+ * @author Richard Zilahi <zilahi@gmail.com>
+ */
 
 interface GuesBookEntries {
     text: string
@@ -10,12 +18,12 @@ interface GuestBook {
 }
 
 class GuestBookController {
-    static guestBookFile: string
+    public guestBookFile: string
     constructor() {
-        GuestBookController.guestBookFile = join(__dirname, '../../../', 'data', "guestbook.json")
+        this.guestBookFile = join(__dirname, '../../../', 'data', "guestbook.json");
     }
 
-    public static getGuestBookEntries() {
+    public getGuestBookEntries() {
         const rawData = readFileSync(this.guestBookFile, 'utf8');
         try {
             const persedData = JSON.parse(rawData) as GuestBook
@@ -26,4 +34,4 @@ class GuestBookController {
     }
 }
 
-export default GuestBookController
+export default new GuestBookController

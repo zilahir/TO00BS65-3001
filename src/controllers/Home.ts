@@ -1,6 +1,6 @@
 import { Response, Request, NextFunction } from 'express'
-import { RootRequest } from '../routes/Api';
-import GuestBookController from './GuestBook';
+import { RootRequest } from '../routes/types';
+import GuestBookController from './GuestBook/index'
 
 /**
  * Handler for Home
@@ -9,7 +9,6 @@ import GuestBookController from './GuestBook';
  */
 
 class Home {
-	static guestBookConroller = new GuestBookController()
 	public static index (request: (Request & RootRequest), response: Response, next: NextFunction): void {
 		const entries = GuestBookController.getGuestBookEntries()
 		return response.render('pages/home', {

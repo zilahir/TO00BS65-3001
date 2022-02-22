@@ -1,6 +1,6 @@
 // Navigation
 div
     ul.pure-menu-list.guestbook-menu-list
-        each val in pages
+        each route in pages
             li.pure-menu-item.nav-item
-                a.pure-menu-link(href="#")= val
+                a.pure-menu-link(href=route.path)= route.label

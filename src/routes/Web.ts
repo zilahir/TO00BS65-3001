@@ -8,27 +8,34 @@ import { NextFunction, Router, Request, Response } from 'express';
 
 import Cache from './../providers/Cache';
 import HomeController from '../controllers/Home';
-const cache = Cache.cache;
+import { MenuItem, Route } from './types';
+import GuestBook from'../controllers/GuestBook';
 
-interface AppRoute {
-	key: number,
-	targetPath: string;
-	cache?: (duratoin: number) => any;
-	routeController: (request: Request, response: Response, next?: NextFunction) => void,
-	type: "POST" | "GET"
-
-}
-
-const routes: AppRoute[] = [
-	{ key: 0, targetPath: '/', routeController: HomeController.index, cache: cache(10), type: "GET" },
-]
 
 const router = Router();
 
-routes.map(({ targetPath, cache, routeController, type }) => {
-	if (type === "GET") {
-		return router.get(targetPath, cache, routeController)
-	}
+export const routes = {
+    routes: [
+        {
+            method: "GET", path: '/', controller: HomeController.index, label: 'Home'
+        },
+        {
+            method: "GET", path: "/guestbook", label: "Guestbook", controller: GuestBook.renderPage
+        }
+    ],
+    getAllRouters: (): Route[] => routes.routes,
+    getAllPaths: (): string[] => routes.routes.map(route => route.label),
+    getAllMenuItems: (): MenuItem[] => routes.routes.map(({path, label}) => ({
+        path,
+        label
+    }))
+}
+
+routes.getAllRouters().map(route => {
+    if (route.method === "GET") {
+        return router.get(route.path, [route.controller]);
+    }
 })
+ 
 
 export default router;

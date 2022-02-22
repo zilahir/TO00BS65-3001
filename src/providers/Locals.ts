@@ -18,16 +18,15 @@ class Locals {
 
 		const url = process.env.APP_URL || `http://localhost:${process.env.PORT}`;
 		const port = process.env.PORT || 4040;
-		const appSecret = process.env.APP_SECRET || 'This is your responsibility!';
+		const appSecret = process.env.APP_SECRET || 'jfnkjwnfjknfdjksdnfjkds';
 		const mongooseUrl = process.env.MONGOOSE_URL;
 		const maxUploadLimit = process.env.APP_MAX_UPLOAD_LIMIT || '50mb';
 		const maxParameterLimit = process.env.APP_MAX_PARAMETER_LIMIT || '50mb';
 
-		const name = process.env.APP_NAME || 'NodeTS Dashboard';
+		const name = process.env.APP_NAME || 'GuestBook';
 		const keywords = process.env.APP_KEYWORDS || 'somethings';
 		const year = (new Date()).getFullYear();
 		const copyright = `Copyright ${year} ${name} | All Rights Reserved`;
-		const company = process.env.COMPANY_NAME || 'GeekyAnts';
 		const description = process.env.APP_DESCRIPTION || 'Here goes the app description';
 
 		const isCORSEnabled = process.env.CORS_ENABLED || true;
@@ -47,7 +46,6 @@ class Locals {
 		return {
 			appSecret,
 			apiPrefix,
-			company,
 			copyright,
 			description,
 			isCORSEnabled,
