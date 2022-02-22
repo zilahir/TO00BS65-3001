@@ -1,5 +1,18 @@
 {
     "entries": [
-        {"text": "Hi! This is my favourite course so far!"}
+        {
+            "message": "Hi! This is my favourite course so far!",
+            "date":  "",
+            "country": "Finland",
+            "username": "Richard",
+            "id": 2
+        },
+        {
+            "message": "Hi! I love Laurea",
+            "date":  "",
+            "country": "Finland",
+            "username": "Richard",
+            "id": 3
+        }
     ]
 }
