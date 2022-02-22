@@ -59,7 +59,7 @@
     "typescript-eslint-parser": "^18.0.0"
   },
   "scripts": {
-    "scss:dev": "node-sass -w -o ./views/static/css ./views/static/css/root.scss ./views/static/css/root.css",
+    "scss:dev": "node-sass -w ./views/static/css -o ./views/static/css ./views/static/css/root.scss ./views/static/css/root.css",
     "build": "tsc --project './tsconfig.json'",
     "code:dev": "tsc --project './tsconfig.json' --watch & NODE_ENV=development nodemon dist",
     "dev": "concurrently -k -n  NODE-SASS,TYPESCRIPT -c bgMagenta,yellow \"npm run scss:dev\"  \"npm run code:dev\" ",

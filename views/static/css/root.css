@@ -782,16 +782,18 @@ font-family: 'Space Mono', monospace;
 .grid-container {
   justify-content: center;
   margin: 1vw auto; }
-  .grid-container .inner-container {
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-    padding: 30px; }
+
+.grid-container .inner-container {
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  padding: 30px; }
 
 .guestbook-menu-list {
   display: flex;
   justify-content: flex-end;
   padding: 20px 0; }
-  .guestbook-menu-list .nav-item {
-    height: unset; }
+
+.guestbook-menu-list .nav-item {
+  height: unset; }
 
 .header {
   background-color: red; }
@@ -801,15 +803,35 @@ font-family: 'Space Mono', monospace;
   margin-bottom: 5px; }
 
 #home.container p.student-id {
-  margin-bottom: 30px; }
+  border-radius: 5px;
+  background-color: rgba(255, 105, 97, 0.6);
+  display: inline-block;
+  padding: 10px 15px;
+  margin-bottom: 0;
+  margin-top: 10px;
+  color: #fff; }
 
 #home .content {
   margin: 10px 0; }
-  #home .content p {
-    font-size: 20px;
-    line-height: 2; }
-    #home .content p code {
-      color: #ff6961; }
+
+#home .content p {
+  font-size: 20px;
+  line-height: 2; }
+
+#home .content p code {
+  color: #ff6961; }
+
+#home .meta .last-entry {
+  margin-top: 30px; }
+
+#home .meta .last-entry .single-guest {
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-left: 3px solid #444444;
+  border-bottom: 1px dotted rgba(68, 68, 68, 0.65); }
+
+#home .meta .last-entry .single-guest p.text {
+  font-size: 18px; }
 
 p {
   font-family: 'Space Mono', monospace; }
