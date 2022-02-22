@@ -13,4 +13,5 @@ block content
       p Number of guest entries currently: 
         span= numOfGuestBookEntries
       div.last-entry
-        include ../partials/guest.pug
+        - const message = lastGuestBookEntry.message
+          include ../partials/guest.pug

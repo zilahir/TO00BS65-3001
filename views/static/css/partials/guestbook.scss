@@ -1,0 +1,8 @@
+@import '../partials/guest';
+
+#guestbook {
+    background: red;
+    &.container {
+        @include single-guest();
+    }
+}

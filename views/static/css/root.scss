@@ -1,10 +1,11 @@
-@import "./utils/reset.scss";
-@import "./utils/pure.scss";
+@import "./utils/reset";
+@import "./utils/pure";
 @import "./utils/fonts";
-@import "./partials/layout.scss";
-@import "./partials/navbar.scss";
-@import "./partials/header.scss";
-@import "./partials/home.scss";
+@import "./partials/layout";
+@import "./partials/navbar";
+@import "./partials/header";
+@import "./partials/home";
+@import './partials/guestbook';
 
 p {
     font-family: 'Space Mono', monospace;

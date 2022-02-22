@@ -5,20 +5,7 @@ block variables
 
 block content
     #guestbook.container
-    table.pure-table.guestbook-table
-      thead
-        tr
-          th #
-          th Name
-          th Country
-          th Message
-          th Date
-      tbody
-        each entry, index in Object.entries(guestBookEntries)
-          - const [key, val] = entry
-          tr
-            td= index + 1
-            td= val.username
-            td= val.country
-            td= val.message
-            td= val.date
+      each entry, index in Object.entries(guestBookEntries)
+        - const [key, val] = entry
+        - var message = val.message
+          include ../partials/guest
