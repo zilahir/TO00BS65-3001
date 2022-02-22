@@ -9,3 +9,9 @@ block content
     p.student-id= studentId
     div.content
       p This application was created for the <code>FullStack</code> course at Laurea, with the coursecode of TO00BS65-3001
+    dev.meta
+      p Number of guest entries currently: 
+        span= numOfGuestBookEntries
+      div.last-entry
+        p The last entry in the guestbook: 
+        p.text= lastGuestBookEntry.text
