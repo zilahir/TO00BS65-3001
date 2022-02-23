@@ -830,8 +830,12 @@ font-family: 'Space Mono', monospace;
   border-left: 3px solid #444444;
   border-bottom: 1px dotted rgba(68, 68, 68, 0.65); }
 
-#home .meta .last-entry .single-guest p.text {
+#home .meta .last-entry .single-guest .message-container p {
+  font-family: 'Roboto', sans-serif;
   font-size: 18px; }
+
+#home .meta .last-entry .single-guest .meta-container {
+  display: flex; }
 
 #guestbook {
   background: red; }
@@ -842,8 +846,12 @@ font-family: 'Space Mono', monospace;
   border-left: 3px solid #444444;
   border-bottom: 1px dotted rgba(68, 68, 68, 0.65); }
 
-#guestbook.container .single-guest p.text {
+#guestbook.container .single-guest .message-container p {
+  font-family: 'Roboto', sans-serif;
   font-size: 18px; }
+
+#guestbook.container .single-guest .meta-container {
+  display: flex; }
 
 p {
   font-family: 'Space Mono', monospace; }

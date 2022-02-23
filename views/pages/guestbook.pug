@@ -10,5 +10,7 @@ block content
       each entry, index in Object.entries(guestBookEntries)
         - const [key, val] = entry
         - const message = val.message
+        - const username = val.username
+        - const country = val.country
         - const date = formatDate(val.date)
           include ../partials/guest

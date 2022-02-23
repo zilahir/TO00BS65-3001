@@ -59,6 +59,9 @@
     "typescript": "^3.0.1",
     "typescript-eslint-parser": "^18.0.0"
   },
+  "engines": {
+    "node": ">=16"
+  },
   "scripts": {
     "scss:dev": "node-sass -w ./views/static/css -o ./views/static/css ./views/static/css/root.scss ./views/static/css/root.css",
     "build": "tsc --project './tsconfig.json'",

@@ -4,10 +4,16 @@
         background-color: rgba($color: #f9f9f9, $alpha: 1.0);
         border-left: 3px solid rgba($color: #444, $alpha: 1.0);
         border-bottom: 1px dotted rgba($color: #444, $alpha: 0.65);
-        p {
-            &.text {
-                font-size: 18px;
+
+        .message-container {
+            p {
+                font-family: 'Roboto', sans-serif;
+                font-size: 24px;
             }
+        }
+        
+        .meta-container {
+            display: flex;
         }
     }
 }

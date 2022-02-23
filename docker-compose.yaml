@@ -3,7 +3,7 @@ services:
     express-typescript:
         build:
             context: .
-            dockerfile: ./iglocal.Dockerfile
+            dockerfile: ./local.Dockerfile
         container_name: 'to00bs65-3001-guestbook'
         volumes:
             - .:/usr/src/app/
