@@ -2,10 +2,13 @@ extends ../layout.pug
 block variables
   - var pages = routes
   - var guestBookEntries = entries
+  - var format = formatDateFns
 
 block content
+    - function formatDate(date) { return format(new Date(date), 'yyyy-MM-dd') };
     #guestbook.container
       each entry, index in Object.entries(guestBookEntries)
         - const [key, val] = entry
-        - var message = val.message
+        - const message = val.message
+        - const date = formatDate(val.date)
           include ../partials/guest

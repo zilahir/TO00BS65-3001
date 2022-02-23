@@ -7,6 +7,7 @@
 import { Application } from 'express';
 import * as path from 'path';
 import * as dotenv from 'dotenv';
+import { format } from 'date-fns'
 
 class Locals {
 	/**
@@ -43,6 +44,8 @@ class Locals {
 		const redisPrefix = process.env.REDIS_QUEUE_DB || 'q';
 		const redisDB = process.env.REDIS_QUEUE_PREFIX || 3;
 
+		const formatDateFns = format;
+
 		return {
 			appSecret,
 			apiPrefix,
@@ -63,7 +66,8 @@ class Locals {
 			redisPrefix,
 			url,
 			queueMonitor,
-			queueMonitorHttpPort
+			queueMonitorHttpPort,
+			formatDateFns,
 		};
 	}
 
