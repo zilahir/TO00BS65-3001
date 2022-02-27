@@ -9,10 +9,11 @@ interface NewMessageRequest extends Request {
 }
 
 class NewMessage {
-    public static renderPage(request: RootRequest, response: Response, next: NextFunction) {
-        console.log('rendering')
+    public static renderPage(request: (Request & RootRequest), response: Response, next: NextFunction) {
+        console.log('rendering', request.route.path === '/ajaxmessage')
         return response.render('pages/newmessage', {
             routes: request.allPath ?? [],
+            isAjaxPage: request.route.path === '/ajaxmessage'
         })
     }
 

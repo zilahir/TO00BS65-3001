@@ -1,6 +1,7 @@
 extends ../layout.pug
 block variables
   - var pages = routes
+  - var ajax = isAjaxPage
 
 block content
     #new-message.container
@@ -40,6 +41,10 @@ block content
                         )
                         span.pure-form-message-inline.hidden This is a required field
                         div.submit-btn-container
-                            button.pure-button(
-                                type='submit'
-                            ) Submit
+                            #ajax
+                                if ajax === true
+                                    button.pure-button(
+                                        type='submit'
+                                    ) Submit
+                                else
+                                    button.pure-button Submit

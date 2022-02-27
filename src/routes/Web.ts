@@ -24,6 +24,9 @@ export const routes = {
         },
         {
             method: "GET", path: '/newmessage', label: "New Message", controller: NewMessage.renderPage
+        },
+        {
+            method: "GET", path: '/ajaxmessage', label: "New Message (AJAX)", controller: NewMessage.renderPage
         }
     ],
     getAllRouters: (): Route[] => routes.routes,
