@@ -1,7 +1,5 @@
 import { Router } from 'express';
-import HomeController from '../controllers/Api/Home';
-import GuestBookController from '../controllers/GuestBook';
-import { MenuItem, Route } from './types';
+import NewMessage from '../controllers/NewMessage';
 
 /**
  * Define all your API web-routes
@@ -10,5 +8,7 @@ import { MenuItem, Route } from './types';
  */
 
 const router = Router();
+
+router.post('/newsmessage', [NewMessage.createNewGuestBookEntry])
 
 export default router

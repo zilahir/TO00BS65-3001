@@ -4,3 +4,39 @@ block variables
 
 block content
     #new-message.container
+        h1 Create new entry
+        div.inner-container
+            form.pure-form.pure-form-stacked(
+                type='POST'
+                method='newmessage'
+            )
+                fieldset
+                    div.pure-control-group
+                        label(for='aligned-name') Name
+                        input(
+                            type='text'
+                            id='name'
+                            placeholder='Name'
+                            autocomplete='off'
+                        )
+                        span.pure-form-message-inline.hidden This is a required field
+                        label(for='aligned-name') Country
+                        input(
+                            type='text'
+                            id='country'
+                            placeholder='Country'
+                            autocomplete='off'
+                        )
+                        span.pure-form-message-inline.hidden This is a required field
+                        label(for='aligned-name') Message
+                        textarea(
+                            type='text'
+                            id='message'
+                            placeholder='Country'
+                            autocomplete='off'
+                        )
+                        span.pure-form-message-inline.hidden This is a required field
+                        div.submit-btn-container
+                            button.pure-button(
+                                type='submit'
+                            ) Submit
