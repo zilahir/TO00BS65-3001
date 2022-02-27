@@ -6,10 +6,10 @@
 
 import { NextFunction, Router, Request, Response } from 'express';
 
-import Cache from './../providers/Cache';
 import HomeController from '../controllers/Home';
 import { MenuItem, Route } from './types';
 import GuestBook from'../controllers/GuestBook';
+import NewMessage from '../controllers/NewMessage';
 
 
 const router = Router();
@@ -21,6 +21,9 @@ export const routes = {
         },
         {
             method: "GET", path: "/guestbook", label: "Guestbook", controller: GuestBook.renderPage
+        },
+        {
+            method: "GET", path: '/newmessage', label: "New Message", controller: NewMessage.renderPage
         }
     ],
     getAllRouters: (): Route[] => routes.routes,

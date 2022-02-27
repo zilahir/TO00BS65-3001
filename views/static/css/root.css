@@ -832,7 +832,7 @@ font-family: 'Space Mono', monospace;
 
 #home .meta .last-entry .single-guest .message-container p {
   font-family: 'Roboto', sans-serif;
-  font-size: 18px; }
+  font-size: 24px; }
 
 #home .meta .last-entry .single-guest .meta-container {
   display: flex; }
@@ -848,7 +848,7 @@ font-family: 'Space Mono', monospace;
 
 #guestbook.container .single-guest .message-container p {
   font-family: 'Roboto', sans-serif;
-  font-size: 18px; }
+  font-size: 24px; }
 
 #guestbook.container .single-guest .meta-container {
   display: flex; }
