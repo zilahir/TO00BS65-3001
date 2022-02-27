@@ -39,6 +39,8 @@ routes.getAllRouters().map(route => {
         return router.get(route.path, [route.controller]);
     }
 })
+
+router.post('/newmessage', [NewMessage.createNewGuestBookEntry])
  
 
 export default router;

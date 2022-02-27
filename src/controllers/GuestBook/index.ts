@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from "express"
 import { join } from 'path'
-import { readFileSync } from 'fs'
-import { RootRequest } from "../../routes/types"
+import { writeFileSync, readFileSync } from 'fs'
 
 /**
  * GuestBook controller
@@ -9,12 +8,16 @@ import { RootRequest } from "../../routes/types"
  * @author Richard Zilahi <zilahi@gmail.com>
  */
 
-interface GuesBookEntries {
-    text: string
+interface GuesBookEntry {
+    id: string,
+    message: string,
+    username: string,
+    date: number,
+    country: string
 }
 
 interface GuestBook {
-    entries: GuesBookEntries[]
+    entries: GuesBookEntry[]
 }
 
 class GuestBookController {
@@ -31,6 +34,16 @@ class GuestBookController {
         } catch {
             console.error('error opening the JSON file')
         }
+    }
+
+    public createNewGuestBookEntry(newObject: GuesBookEntry) {
+        const currentEntries = this.getGuestBookEntries();
+        console.log('currentEntries', currentEntries);
+        console.log('newObject', newObject);
+
+        writeFileSync(this.guestBookFile, JSON.stringify({
+            entries: [...currentEntries, newObject]
+        }))
     }
 }
 

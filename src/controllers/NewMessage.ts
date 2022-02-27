@@ -1,5 +1,7 @@
 import { NextFunction, Response, Request } from "express";
+import { v4 as uuidv4 } from 'uuid';
 
+import GuestBookController from '../controllers/GuestBook/index'
 import { RootRequest } from "../routes/types";
 
 interface NewMessageRequest extends Request {
@@ -15,15 +17,19 @@ class NewMessage {
     }
 
     public static createNewGuestBookEntry(request: (Request & NewMessageRequest), response: Response, next: NextFunction) {
-        const { name } = request
+        const { username, country, message } = request.body
         const newObject = {
-            name,
-        }
+            username,
+            country,
+            message,
+            id: uuidv4(),
+            date: new Date().getTime(),
+        };
 
         console.log(newObject);
-        return response.status(200).send({
-            ok: true,
-        })
+        response.redirect('/newmessage');
+        GuestBookController.createNewGuestBookEntry(newObject)
+        return response.end();
     }
 }
 

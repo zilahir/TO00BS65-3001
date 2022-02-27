@@ -7,8 +7,8 @@ block content
         h1 Create new entry
         div.inner-container
             form.pure-form.pure-form-stacked(
-                type='POST'
-                method='newmessage'
+                method='POST'
+                action='/newmessage'
             )
                 fieldset
                     div.pure-control-group
@@ -16,6 +16,7 @@ block content
                         input(
                             type='text'
                             id='name'
+                            name='useranme'
                             placeholder='Name'
                             autocomplete='off'
                         )
@@ -24,6 +25,7 @@ block content
                         input(
                             type='text'
                             id='country'
+                            name='country'
                             placeholder='Country'
                             autocomplete='off'
                         )
@@ -31,8 +33,9 @@ block content
                         label(for='aligned-name') Message
                         textarea(
                             type='text'
+                            name='message'
                             id='message'
-                            placeholder='Country'
+                            placeholder='Type your message'
                             autocomplete='off'
                         )
                         span.pure-form-message-inline.hidden This is a required field

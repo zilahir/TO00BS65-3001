@@ -7,7 +7,6 @@ class Pages {
         _express.use((request: RootRequest, response: Response, next: NextFunction) => {
             const allPath = routes.getAllMenuItems()
             request.allPath = allPath;
-
             next();
         })
 
