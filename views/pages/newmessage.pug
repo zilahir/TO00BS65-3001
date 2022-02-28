@@ -4,10 +4,12 @@ block variables
   - var ajax = isAjaxPage
 
 block content
+    script
+        include ../static/js/newmessage.js
     #new-message.container
         h1 Create new entry
         div.inner-container
-            form.pure-form.pure-form-stacked(
+            form#new-guest-form.pure-form.pure-form-stacked(
                 method='POST'
                 action='/newmessage'
             )
@@ -43,7 +45,7 @@ block content
                         div.submit-btn-container
                             #ajax
                                 if ajax === true
-                                    button.pure-button(
+                                    button#handle-ajax.pure-button(
                                         type='submit'
                                     ) Submit
                                 else

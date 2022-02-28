@@ -9,6 +9,6 @@ import NewMessage from '../controllers/NewMessage';
 
 const router = Router();
 
-// router.post('/newmessage', [NewMessage.createNewGuestBookEntry])
+router.post('/ajaxmessage', [NewMessage.createNewGuestBookEntry])
 
 export default router

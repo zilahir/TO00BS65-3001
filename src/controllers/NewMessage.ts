@@ -18,7 +18,8 @@ class NewMessage {
     }
 
     public static createNewGuestBookEntry(request: (Request & NewMessageRequest), response: Response, next: NextFunction) {
-        const { username, country, message } = request.body
+        const { username, country, message } = request.body;
+        console.log(request)
         const newObject = {
             username,
             country,
@@ -28,9 +29,14 @@ class NewMessage {
         };
 
         console.log(newObject);
-        response.redirect('/newmessage');
-        GuestBookController.createNewGuestBookEntry(newObject)
-        return response.end();
+        GuestBookController.createNewGuestBookEntry(newObject);
+        if (request.baseUrl === '/api') {
+            return response.status(200).send({
+                success: true,
+            })
+        } else {
+            return response.end();
+        }
     }
 }
 
