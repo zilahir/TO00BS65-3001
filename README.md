@@ -162,3 +162,49 @@ return response.render('pages/guestbook', {
     entries: GuestBookController.getGuestBookEntries(),
 }
 ```
+
+And this leads to the `GuestBookController`. 
+
+The `GuestBookController` is a very basic `Class` that handles the data reading and writing.
+The requirement of the application was to store the guestbook entries in a `JSON` files.
+
+I've chosen the following `JSON` structure:
+
+```json
+{
+    "entries" [
+        {},
+        {},
+    ]
+}
+```
+
+An entry `object` implements the following interface:
+
+```typescript
+interface GuesBookEntry {
+    id: string,
+    message: string,
+    username: string,
+    date: number,
+    country: string
+}
+```
+
+This is rather self explanatory, but let's take a look on 2 of the properties.
+
+I've decided to store the data in `UNIX epoch` format, becasue this is easy to handle, and support easy conversion, and as well as formttting. THe formatting is done using `date-fns`.
+
+Every entry needs to be identified somehow. Using `UNIX epoch` too for this purpsoe can be considered as a valid solustion, however I decided to go with `RFC4122 UUIDs`.
+
+A valid example of an object that represents a Guestbook entry in my `JSON` file looks like the following:
+
+```json
+{
+    "country": "Finland",
+    "message": "kakakak",
+    "id": "a08e381f-2ec1-4b2f-9e07-0f3f0d52bef6",
+    "date": 1646055387458,
+    "username": "Richard"
+}
+```
