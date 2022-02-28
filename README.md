@@ -107,6 +107,54 @@ The development envrionment is put together with a set of useful tools, such as:
 * `NodeSASS` to re-compile the `SCSS` files into a single output (`root.css`) upon any of the `SCSS` files has changed.
 * `tsc` to compile the `typescript` files into `javascript`.
 
+To run this application locally, requires to have `Docker` installed on your computer. Once that prerequisite is satisfied:
+
+1) clone the repository
+2) navigate to the folder
+3) build the container with `docker compose build`
+4) fire up the containers with `docker compose up`
+
+The last command mentioned will start the entire stack, on the port of `4040`, and the output should ne something similar:
+
+```
+7:42:17 PM - File change detected. Starting incremental compilation...
+to00bs65-3001-guestbook  | [TYPESCRIPT]
+to00bs65-3001-guestbook  | [TYPESCRIPT]
+to00bs65-3001-guestbook  | [TYPESCRIPT] 7:42:17 PM - Found 0 errors. Watching for file changes.
+to00bs65-3001-guestbook  | [TYPESCRIPT] [nodemon] restarting due to changes...
+to00bs65-3001-guestbook  | [TYPESCRIPT] [nodemon] starting `node dist`
+to00bs65-3001-guestbook  | [TYPESCRIPT]
+Server :: Running @ 'http://localhost:4040'
+to00bs65-3001-guestbook  | [TYPESCRIPT] Server :: Running @ 'http://localhost:4040'
+to00bs65-3001-guestbook  | [TYPESCRIPT] Server :: Running @ 'http://localhost:4040'
+to00bs65-3001-guestbook  | [TYPESCRIPT] Server :: Running @ 'http://localhost:4040'
+```
+
+The application is started with a single command, using a set of other comamnds combined with `nodemon`, so every sub process has a prefix, as visible on the example above:
+
+* `TYPESCRIPT` runs when `tsc` compiling is happening
+* `NODE-SASS` when `SCSS` compiling is happening
+
+```
+to00bs65-3001-guestbook  | [NODE-SASS] => changed: /usr/src/app/views/static/css/root.scss
+to00bs65-3001-guestbook  | [NODE-SASS] Rendering Complete, saving .css file..
+```
+
+and
+
+* `STATIC`
+
+when `static` `ts` files are compiled into `javascript`
+
+```
+to00bs65-3001-guestbook  | [STATIC] => compiling static/js/newmessage.ts ...
+```
+
+There is a single `static` `typescript` file in this application, which handles the `AJAX` request, towards the server.
+
+This file can be found at: `views/static/js/newmessage.ts`.
+
+
 ### Docker
 
 The application is backed into `Docker containers`.
