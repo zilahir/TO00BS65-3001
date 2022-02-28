@@ -1,14 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
     const submitBtn = document.getElementById('handle-ajax');
-    const formFieldIds = ['name', 'country', 'message'];
+    const formFieldIds = ['username', 'country', 'message'];
     if (submitBtn) {
         submitBtn.addEventListener('click', (event) => {
             event.preventDefault();
             const formFieldValues = Object.assign({}, ...formFieldIds.map((field: string) => ({
                 [field]: document.querySelector<HTMLInputElement>(`#${field}`).value
             })))
-        
-            console.log('formFieldValues', formFieldValues);
 
             fetch('/api/ajaxmessage', {
                 method: 'POST',
@@ -16,7 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(formFieldValues)
-            }).then(apiResponse => apiResponse.json())
+            }).then(() => {
+                formFieldIds.map(field => {
+                    return document.querySelector<HTMLInputElement>(`#${field}`).value = ""
+                })
+            })
         })
     }
 });

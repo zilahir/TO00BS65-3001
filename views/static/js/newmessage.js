@@ -7,7 +7,7 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
 };
 document.addEventListener("DOMContentLoaded", function () {
     var submitBtn = document.getElementById('handle-ajax');
-    var formFieldIds = ['name', 'country', 'message'];
+    var formFieldIds = ['username', 'country', 'message'];
     if (submitBtn) {
         submitBtn.addEventListener('click', function (event) {
             event.preventDefault();
@@ -17,14 +17,17 @@ document.addEventListener("DOMContentLoaded", function () {
                     _a[field] = document.querySelector("#" + field).value,
                     _a);
             })));
-            console.log('formFieldValues', formFieldValues);
             fetch('/api/ajaxmessage', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(formFieldValues)
-            }).then(function (apiResponse) { return apiResponse.json(); });
+            }).then(function () {
+                formFieldIds.map(function (field) {
+                    return document.querySelector("#" + field).value = "";
+                });
+            });
         });
     }
 });
