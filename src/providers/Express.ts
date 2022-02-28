@@ -60,11 +60,7 @@ class Express {
 		this.express = ExceptionHandler.notFoundHandler(this.express);
 
 		// Start the server on the specified port
-		this.express.listen(port, (_error: any) => {
-			if (_error) {
-				return console.log('Error: ', _error);
-			}
-
+		this.express.listen(port, (): void => {
 			return console.log('\x1b[33m%s\x1b[0m', `Server :: Running @ 'http://localhost:${port}'`);
 		});
 	}
