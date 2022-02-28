@@ -99,17 +99,33 @@ The complitation process happens in the `scss:dev` `npm` command.
 
 ### Development environment
 
-The application is backed into `Docker containers`.
-
-The containers are made up of the following image:
-
-* node:16.2.0
-
-The rest of the dependency is defined in a single `package.json`. As this is an `SSR` application, for the sake of consistency everything is serverd from the same package tree.
+The dependencies of the application are defined in a single `package.json`. As this is an `SSR` application, for the sake of consistency everything is serverd from the same package tree.
 
 The development envrionment is put together with a set of useful tools, such as:
 
 * `nodemon` to re-compile the application upon any of the source files changes.
 * `NodeSASS` to re-compile the `SCSS` files into a single output (`root.css`) upon any of the `SCSS` files has changed.
 * `tsc` to compile the `typescript` files into `javascript`.
+
+### Docker
+
+The application is backed into `Docker containers`.
+
+The containers are made up of the following image:
+
+* `node:16.2.0`
+
+### Codebase
+
+The codebase is _well_ structured and as well as documented.
+There's a primary entry point for the Clustered `API` server, defined in the `index.ts` at: `src/index.ts`.
+
+The `routes` of the `express` application has defined upon their primary function into two seperate group:
+
+1) `WEB` which defines the fucntions, that renders the pages. This can be found at: `src/routes/Web.ts`
+
+2) `API` which defiens the `API` like route, which is called via `AJAX` request, which was a mandatory requirement in this assignment. This can be found at: `src/routes/Api.ts`.
+
+
+
 
