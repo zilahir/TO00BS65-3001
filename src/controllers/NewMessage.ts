@@ -1,16 +1,13 @@
 import { NextFunction, Response, Request } from "express";
 import { v4 as uuidv4 } from 'uuid';
 
-import GuestBookController from '../controllers/GuestBook/index'
+import GuestBookController, { GuesBookEntry } from '../controllers/GuestBook/index'
 import { RootRequest } from "../routes/types";
 
-interface NewMessageRequest extends Request {
-    name: string
-}
+interface NewMessageRequest extends Request, GuesBookEntry  {}
 
 class NewMessage {
     public static renderPage(request: (Request & RootRequest), response: Response, next: NextFunction) {
-        console.log('rendering', request.route.path === '/ajaxmessage')
         return response.render('pages/newmessage', {
             routes: request.allPath ?? [],
             isAjaxPage: request.route.path === '/ajaxmessage',
@@ -20,7 +17,6 @@ class NewMessage {
 
     public static createNewGuestBookEntry(request: (Request & NewMessageRequest), response: Response, next: NextFunction) {
         const { username, country, message } = request.body;
-        console.log(request)
         const newObject = {
             username,
             country,

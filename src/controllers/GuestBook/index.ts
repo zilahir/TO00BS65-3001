@@ -8,7 +8,7 @@ import { writeFileSync, readFileSync } from 'fs'
  * @author Richard Zilahi <zilahi@gmail.com>
  */
 
-interface GuesBookEntry {
+export interface GuesBookEntry {
     id: string,
     message: string,
     username: string,
