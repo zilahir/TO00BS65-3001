@@ -265,6 +265,24 @@ Since size of the application let's this, there's a single entrypoint for the st
 
 The `UI` of the application kept to be _very_ simple and minimalistic.
 
+Since the route `/newmessage` and the route `/ajaxmessage` are essentially the same, and avoiding code-repeating is a general mindset, I am using the same controller to handle both the `form` and the `ajax` reuqest. The only part they are different, is how `express` should handle them. The `API` should return an `HTTP` reponse, with a statusc code, while the `form` will re-render the pagae.
+
+The solution is very simple:
+
+```js
+if (request.baseUrl === '/api') {
+    return response.status(200).send({
+        success: true,
+    })
+} else {
+    return response.end();
+}
+```
+
+So, if the request is coming from the `/api/*` prefix, we need to handle the request as an `AJAX` request, otherwise just send the `end` signal the `Express` exposes on the `response` object.
+
+Simple, but saves at least 50 lines of code repeating.
+
 ### Deployment
 
 As briefly mentioned above, the applicatino is deployed in `Docker` containers, to `Heroku`. The deployment handles automatically, if there's a new commit arrives to the project repository's `release` branch, which triggers a very basic `Github` actions, that build and publishes the application in the pre-defined container.
