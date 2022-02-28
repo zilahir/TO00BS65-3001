@@ -11,6 +11,7 @@ class GuestBook {
             entries: GuestBookController.getGuestBookEntries(),
             routes: request.allPath ?? [],
             formatDateFns: Locals.config().formatDateFns,
+            title: "Entries"
         })
     }
 }

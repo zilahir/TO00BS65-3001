@@ -17,7 +17,8 @@ class Home {
 			studentId: 2108162,
 			routes: request.allPath ?? [],
 			numOfGuestBookEntries: entries.length,
-			lastGuestBookEntry: entries[0]
+			lastGuestBookEntry: entries[0],
+			title: 'Home'
 		});
 	}
 }
