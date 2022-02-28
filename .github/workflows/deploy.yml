@@ -9,6 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: "Deploy the web dyno"
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
@@ -18,5 +19,12 @@ jobs:
           usedocker: true
           docker_build_args: |
             NODE_ENV
+      - name: "Login to heroku registry"
+        run: heroku container:login
+      - name: "Build and push to heroku registry"
+        run: heroku container:push web --app laurea-guestbook
+      - name: "Releases the container"
+        run: heroku container:release web --app laurea-guestbook
+
         env:
           NODE_ENV: production
