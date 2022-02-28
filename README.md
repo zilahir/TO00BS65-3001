@@ -126,6 +126,39 @@ The `routes` of the `express` application has defined upon their primary functio
 
 2) `API` which defiens the `API` like route, which is called via `AJAX` request, which was a mandatory requirement in this assignment. This can be found at: `src/routes/Api.ts`.
 
+The `UI` is implemented in `PugJS`, and tried to follow a _component base_ mindset, as much as `PugJS` can allow it. Since it doesn't support `Dynamic Data Rendering` there are some solution which might be interesting, or odd by first sight. 
 
+For example:
 
+1) scoped variables
 
+Let's take a look at the `guest.pug` files, which can be found at: `views/partials/guest.pug`. 
+
+This behaves like it was a component, which approach might be familiar from modern javascript `UI` frameworks, such as `React`. 
+
+The implemenation of this `partial` (as they are being called in `PugJS`) is rather simple:
+
+```pug
+     p= username
+     p= country
+     p= date
+```
+
+the `paragraph` elements are rendeing the text from variables which are defined one level higher in the `DOM` tree:
+
+```js
+ - const [key, val] = entry
+ - const message = val.message
+ - const username = val.username
+ - const country = val.country
+ - const date = formatDate(val.date)
+     include ../partials/guest
+```
+
+The `data` into these variables are coming from the page `Controller` functions, which rendering the page:
+
+```js
+return response.render('pages/guestbook', {
+    entries: GuestBookController.getGuestBookEntries(),
+}
+```
