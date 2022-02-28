@@ -1,6 +1,7 @@
 extends ../layout.pug
 block variables
   - var pages = routes
+  - var format = formatDateFns
 
 block content
   #home.container
@@ -13,5 +14,9 @@ block content
       p Number of guest entries currently: 
         span= numOfGuestBookEntries
       div.last-entry
+        - function formatDate(date) { return format(new Date(date), 'yyyy-MM-dd') };
         - const message = lastGuestBookEntry.message
+        - const username = lastGuestBookEntry.username
+        - const date = formatDate(lastGuestBookEntry.date)
+        - const country = lastGuestBookEntry.country
           include ../partials/guest.pug

@@ -33,6 +33,20 @@
     }
 
     .meta {
+        margin-top: 30px;
+        display: block;
+
+        p {
+            font-size: 22px;
+
+            span {
+                border-radius: 100%;
+                background: rgba($color: $code-red, $alpha: 0.6);
+                padding: 10px;
+                display: inline-block;
+            }
+        }
+
         .last-entry {
             margin-top: 30px;
             @include single-guest();

@@ -821,6 +821,19 @@ font-family: 'Space Mono', monospace;
 #home .content p code {
   color: #ff6961; }
 
+#home .meta {
+  margin-top: 30px;
+  display: block; }
+
+#home .meta p {
+  font-size: 22px; }
+
+#home .meta p span {
+  border-radius: 100%;
+  background: rgba(255, 105, 97, 0.6);
+  padding: 10px;
+  display: inline-block; }
+
 #home .meta .last-entry {
   margin-top: 30px; }
 
@@ -835,7 +848,17 @@ font-family: 'Space Mono', monospace;
   font-size: 24px; }
 
 #home .meta .last-entry .single-guest .meta-container {
-  display: flex; }
+  display: flex;
+  margin-top: 10px; }
+
+#home .meta .last-entry .single-guest .meta-container p {
+  font-size: 16px; }
+
+#home .meta .last-entry .single-guest .meta-container p:first-child {
+  flex: 1; }
+
+#home .meta .last-entry .single-guest .meta-container p:last-child {
+  margin-left: 10px; }
 
 #guestbook {
   background: red; }
@@ -851,7 +874,17 @@ font-family: 'Space Mono', monospace;
   font-size: 24px; }
 
 #guestbook.container .single-guest .meta-container {
-  display: flex; }
+  display: flex;
+  margin-top: 10px; }
+
+#guestbook.container .single-guest .meta-container p {
+  font-size: 16px; }
+
+#guestbook.container .single-guest .meta-container p:first-child {
+  flex: 1; }
+
+#guestbook.container .single-guest .meta-container p:last-child {
+  margin-left: 10px; }
 
 #new-message.container label {
   font-size: 18px;

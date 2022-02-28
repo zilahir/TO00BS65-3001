@@ -14,6 +14,19 @@
         
         .meta-container {
             display: flex;
+            margin-top: 10px;
+
+            p {
+                font-size: 16px;
+
+                &:first-child {
+                    flex: 1;
+                }
+
+                &:last-child {
+                    margin-left: 10px;
+                }
+            }
         }
     }
 }
