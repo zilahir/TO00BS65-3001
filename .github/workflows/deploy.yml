@@ -17,6 +17,7 @@ jobs:
           heroku_app_name: "laurea-guestbook"
           heroku_email: "zilahi@gmail.com"
           usedocker: true
+          justlogin: true
           docker_build_args: |
             NODE_ENV
       - name: "Login to heroku registry"
