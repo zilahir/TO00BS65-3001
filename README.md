@@ -10,6 +10,7 @@
     * Git
     * Stack
     * Toolset
+    * Development environment
     * Docker
     * Codebase
     * Deployment
@@ -61,3 +62,54 @@ The application structure is well organized, to keep it easy to maintain.
     ├── partials
     └── static
 ```
+
+## Implementation
+
+In this section I will go through the implementation in _good_ detail.
+
+### GIT
+
+The `git` repository of the project can be found [here](https://github.com/zilahir/TO00BS65-3001).
+
+The branching logic is rather simple in this project. There's a `master` branch, where the active development is happening. And then there's a `release` branch, where the deployment happens. The deployment happens with `Pull Requests` from the `master` onto the `release` branch.
+
+
+### Stack
+
+The application is following the `MVC` mindset.
+
+### Toolset
+
+The applicatino uses the following technologies:
+
+* `NodeJS`
+* `ExpressJS`
+* `TypeScript`
+* `PugJS`
+* `NodeSASS`
+* `Docker`
+
+The server-side codebase is written in `NodeJS` on top of `ExpressJS` framework, in `TypeScript`.
+
+The `frontend` of the application is using `PugJS` templating engine.
+
+The `styleing` is dene with `Pure.CSS`, written in `SCSS`, and compiled into `CSS` using `NodeSASS`.
+
+The complitation process happens in the `scss:dev` `npm` command.
+
+### Development environment
+
+The application is backed into `Docker containers`.
+
+The containers are made up of the following image:
+
+* node:16.2.0
+
+The rest of the dependency is defined in a single `package.json`. As this is an `SSR` application, for the sake of consistency everything is serverd from the same package tree.
+
+The development envrionment is put together with a set of useful tools, such as:
+
+* `nodemon` to re-compile the application upon any of the source files changes.
+* `NodeSASS` to re-compile the `SCSS` files into a single output (`root.css`) upon any of the `SCSS` files has changed.
+* `tsc` to compile the `typescript` files into `javascript`.
+
