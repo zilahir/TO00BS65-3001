@@ -1,4 +1,6 @@
 import { Response, Request, NextFunction } from 'express'
+
+import Locals from '../providers/Locals';
 import { RootRequest } from '../routes/types';
 import GuestBookController from './GuestBook/index'
 
@@ -17,7 +19,9 @@ class Home {
 			studentId: 2108162,
 			routes: request.allPath ?? [],
 			numOfGuestBookEntries: entries.length,
-			lastGuestBookEntry: entries[0]
+			lastGuestBookEntry: entries[0],
+			formatDateFns: Locals.config().formatDateFns,
+			title: 'Home'
 		});
 	}
 }

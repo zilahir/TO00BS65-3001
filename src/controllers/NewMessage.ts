@@ -13,7 +13,8 @@ class NewMessage {
         console.log('rendering', request.route.path === '/ajaxmessage')
         return response.render('pages/newmessage', {
             routes: request.allPath ?? [],
-            isAjaxPage: request.route.path === '/ajaxmessage'
+            isAjaxPage: request.route.path === '/ajaxmessage',
+            title: "New Message"
         })
     }
 
@@ -28,7 +29,6 @@ class NewMessage {
             date: new Date().getTime(),
         };
 
-        console.log(newObject);
         GuestBookController.createNewGuestBookEntry(newObject);
         if (request.baseUrl === '/api') {
             return response.status(200).send({
