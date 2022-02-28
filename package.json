@@ -62,7 +62,8 @@
     "code:dev": "tsc --project './tsconfig.json' --watch & NODE_ENV=development nodemon dist --ignore data/guestbook.json",
     "dev": "concurrently -k -n  NODE-SASS,TYPESCRIPT,STATIC -c bgMagenta,yellow,red \"npm run scss:dev\"  \"npm run code:dev\" \"npm run ts:local\" ",
     "test": "tsc --project './tsconfig.json' && ./node_modules/.bin/mocha dist/**/*.spec.js",
-    "lint": "./node_modules/.bin/tslint -c tslint.json 'src/**/**.ts'"
+    "lint": "./node_modules/.bin/tslint -c tslint.json 'src/**/**.ts'",
+    "start": "node dist/"
   },
   "author": "Richard Zilahi <zilahi@gmail.com>",
   "license": "ISC"
