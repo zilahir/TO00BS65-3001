@@ -163,6 +163,8 @@ return response.render('pages/guestbook', {
 }
 ```
 
+This idea is used throughout the application.
+
 And this leads to the `GuestBookController`. 
 
 The `GuestBookController` is a very basic `Class` that handles the data reading and writing.
@@ -208,3 +210,14 @@ A valid example of an object that represents a Guestbook entry in my `JSON` file
     "username": "Richard"
 }
 ```
+
+As mentioend above the Styling is done with `NodeSASS` with `Pure.CSS`.
+
+Since size of the application let's this, there's a single entrypoint for the styles, `root.css`, which can be found at: `views/static/css/root.css`.
+
+The `UI` of the application kept to be _very_ simple and minimalistic.
+
+### Deployment
+
+As briefly mentioned above, the applicatino is deployed in `Docker` containers, to `Heroku`. The deployment handles automatically, if there's a new commit arrives to the project repository's `release` branch, which triggers a very basic `Github` actions, that build and publishes the application in the pre-defined container.
+
