@@ -1,0 +1,19 @@
+@import '../utils/variables';
+
+.error-container {
+    background: rgba($color: $code-red, $alpha: 0.15);
+    border-bottom: 3px solid $code-red;
+    padding: 10px;
+    transition: all 0.2s ease-in-out;
+    height: initial;
+
+    &.hidden {
+        height: 0;
+    }
+
+    p {
+        color: $code-red;
+        font-weight: 600;
+        font-size: 20px;
+    }
+}

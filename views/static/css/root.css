@@ -924,6 +924,21 @@ font-family: 'Space Mono', monospace;
   justify-content: flex-end;
   margin-top: 30px; }
 
+.error-container {
+  background: rgba(255, 105, 97, 0.15);
+  border-bottom: 3px solid #ff6961;
+  padding: 10px;
+  transition: all 0.2s ease-in-out;
+  height: initial; }
+
+.error-container.hidden {
+  height: 0; }
+
+.error-container p {
+  color: #ff6961;
+  font-weight: 600;
+  font-size: 20px; }
+
 p {
   font-family: 'Space Mono', monospace; }
 
