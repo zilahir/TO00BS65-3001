@@ -8,6 +8,8 @@ block content
         include ../static/js/newmessage.js
     #new-message.container
         h1 Create new entry
+        #error.error-container.hidden
+            p There was an error in your form. Please double check!    
         div.inner-container
             form#new-guest-form.pure-form.pure-form-stacked(
                 method='POST'
