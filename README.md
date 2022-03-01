@@ -287,6 +287,6 @@ Simple, but saves at least 50 lines of code repeating.
 
 As briefly mentioned above, the applicatino is deployed in `Docker` containers, to `Heroku`. The deployment handles automatically, if there's a new commit arrives to the project repository's `release` branch, which triggers a very basic `Github` actions, that build and publishes the application in the pre-defined container.
 
-## Summary
+## Summary
 
 In my opinion this assignment fullfilles every requirement that the course has set.
