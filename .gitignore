@@ -6,3 +6,4 @@ public/static
 .env.example
 .logs
 dist/
+*.pdf
